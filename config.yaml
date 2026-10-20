@@ -1,0 +1,31 @@
+search_url: "https://reg.recreation.parks.lacity.gov/web/wbwsc/webtrac.wsc/search.html"
+
+# Pay Tennis locations to watch. Delete any you don't want.
+locations:
+  - Westwood Pay Tennis
+  - Cheviot Hills Pay Tennis
+  - BalboaPayTennis
+  - Riverside Courts Pay Tennis
+  - VNSO Pay Tennis
+  - Vermont Canyon Pay Tennis
+  - Westchester Pay Tennis
+  - Pacific Palisades Pay Tennis
+  - Poinsettia Pay Tennis
+
+criteria:
+  days: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+  days_ahead: 8             # reservations open 8 days out at 8am
+  earliest: "8:00 AM"       # block must START at or after this
+  latest: "9:00 PM"         # ...and start at or before this
+  priority:                 # blocks STARTING inside a window are highlighted in the report
+    - {label: "Mon-Thu evenings", days: [Mon, Tue, Wed, Thu], start: "5:00 PM", end: "8:00 PM"}
+    - {label: "Weekend mornings", days: [Sat, Sun], start: "8:00 AM", end: "11:00 AM"}
+  min_minutes: 60           # ignore blocks shorter than this
+  facility_contains: []     # optional filter on court name, e.g. ["Pro Court"]; empty = any
+
+headless: true              # set false if the site blocks invisible browsers (a window will flash open)
+
+notify:
+  macos: true
+  open_report: true         # open report.html in your browser when there are new slots
+  ntfy_topic: ""            # optional phone push via https://ntfy.sh/<topic>

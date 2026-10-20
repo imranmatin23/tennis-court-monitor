@@ -1,0 +1,6 @@
+.venv/
+session.json
+seen.json
+report.html
+debug/
+__pycache__/
